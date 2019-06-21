@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import PoemListPage from './PoemListPage'
 import './App.css';
 
@@ -13,7 +14,11 @@ class App extends Component {
           <h1>William Setstatespear</h1>
         </header>
         <main>
-          <PoemListPage />
+          <Route exact path='/' component={PoemListPage} />
+          <Route component={(props) => {
+            console.log(props.match)
+            return <div />
+          }} />
         </main>
         <footer>
           <p>© WilliamSetstatespear, 2018. All Rights Reserved.</p>
